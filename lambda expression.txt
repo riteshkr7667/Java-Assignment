@@ -1,0 +1,33 @@
+Lambda Expression:
+interface MathOperation{
+    int operate(int x , int y);
+}
+
+class LambdaExample {
+    
+   
+    
+    public static void main(String[] args) {
+ MathOperation addition= (x,y)-> x+y;
+ 
+ int c = addition.operate(5,7);
+ System.out.println(c);
+}}
+******************************************************************
+
+interface MathOperation{
+    int operate(int x );
+}
+
+class LambdaExample {
+    
+   
+    
+    public static void main(String[] args) {
+ MathOperation square= (x)-> x*x;
+ 
+ int c = square.operate(5);
+ System.out.println(c);
+}}
+**********************************************************
+.
