@@ -1,0 +1,58 @@
+1)Reference to a Static Method
+interface Display{
+    void displays();
+}
+
+class HelloWorld {
+    
+    public static void message(){
+        System.out.println("Hello Everyone...");
+    }
+    
+    
+    public static void main(String[] args) {
+ // Referring static method  
+// CLassName::methodReference
+Display dp = HelloWorld::message;
+//calling interface method
+ dp.displays();
+    }
+}
+
+2)Reference to a instance class or non-static method
+interface Display{
+    void displays();
+}
+
+class InstanceClass {
+    
+    public  void message(){
+        System.out.println("Hello Everyone...");
+    }
+    
+    
+    public static void main(String[] args) {
+ // Referring non-static method  
+// ObjectName::methodReference
+InstanceClass object = new InstanceClass();
+Display dp = object::message;
+//calling interface method
+ dp.displays();
+    }
+}
+3) Refernce to constructor
+
+interface Messageable{  
+    Message getMessage(String msg);  
+}  
+class Message{  
+    Message(String msg){  
+        System.out.print(msg);  
+    }  
+}  
+public class ConstructorReference {  
+    public static void main(String[] args) {  
+        Messageable hello = Message::new;  
+        hello.getMessage("Hello");  
+    }  
+}  
